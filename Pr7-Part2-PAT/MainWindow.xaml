@@ -13,25 +13,41 @@
         
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Border Style="{StaticResource GreyPanel}" Margin="25" MinHeight="100" Height="auto" Width="auto" MinWidth="320">
-        <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
-            <TextBlock Style="{StaticResource GreenBlock}" Text="Введите текст для обработки:" HorizontalAlignment="Left"/>
-            <TextBox Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
-            <TextBlock Style="{StaticResource GreenBlock}" Text="Введите значение сдвига:" HorizontalAlignment="Left"/>
-            <TextBox Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5" />
+
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+                <Button Content="Выход" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+                <Button Content="Очистить" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+            </StackPanel>
+            <Border Style="{StaticResource GreyPanel}" Width="300" Height="90" >
+                <StackPanel>
+                <TextBlock Style="{StaticResource GreenBlock}" Text="Введите число сдвига:" HorizontalAlignment="Left"/>
+                <TextBox Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+                </StackPanel>
+            </Border>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
+            <Button Content="Зашифровать" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+            <Button Content="Дешифровать" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
         </StackPanel>
+        </WrapPanel>
+        <Border Style="{StaticResource GreyPanel}" Grid.Column="0" Grid.Row="1" Margin="25" 
+                MinHeight="100" Height="auto" 
+                Width="auto" MinWidth="320">
+            <WrapPanel HorizontalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" Margin="5 5 30 5">
+                   <TextBlock Style="{StaticResource GreenBlock}" Text="Введите текст для обработки:" HorizontalAlignment="Left"/>
+                   <TextBox Width="310" Height="130" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center" Margin="15">
+                    <TextBlock Style="{StaticResource GreenBlock}" Text="Результат:" HorizontalAlignment="Left"/>
+                    <TextBox Width="310" Height="130" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+                </StackPanel>
+            </WrapPanel>
         </Border>
-        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">
-            <Button Content="Зашифровать" Width="250" Height="50" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
-            <Button Content="Дешифровать" Width="250" Height="50" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
-            <Button Content="Очистить" Width="250" Height="50" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
-        </StackPanel>
-        
+
     </Grid>
 </Window>
