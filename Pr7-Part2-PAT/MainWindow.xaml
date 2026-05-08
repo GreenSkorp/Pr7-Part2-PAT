@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pr7_Part2_PAT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#dfeae9">
+    <Window.Resources>
+        <ResourceDictionary Source="/Style.xaml"/>
+    </Window.Resources>
     <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Style="{StaticResource GreyPanel}" Margin="25" MinHeight="100" Height="auto" Width="auto" MinWidth="320">
+        <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource GreenBlock}" Text="Введите текст для обработки:" HorizontalAlignment="Left"/>
+            <TextBox Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+            <TextBlock Style="{StaticResource GreenBlock}" Text="Введите значение сдвига:" HorizontalAlignment="Left"/>
+            <TextBox Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5" />
+        </StackPanel>
+        </Border>
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">
+            <Button Content="Зашифровать" Width="250" Height="50" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+            <Button Content="Дешифровать" Width="250" Height="50" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+            <Button Content="Очистить" Width="250" Height="50" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+        </StackPanel>
         
     </Grid>
 </Window>
