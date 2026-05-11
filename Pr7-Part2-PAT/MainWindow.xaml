@@ -12,39 +12,48 @@
     <Grid>
         
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
-                <Button Content="Выход" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
-                <Button Content="Очистить" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
+        <StackPanel Grid.Row="0">
+            <TextBlock Style="{StaticResource GreenBlock}" FontSize="30"> Шифр Цезаря </TextBlock>
+        </StackPanel>
+
+        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" >
+            
+            <StackPanel VerticalAlignment="Center">
+                <Button x:Name="ExitBtn" Content="Выход" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5" Click="ExitBtn_Click"/>
+                <Button x:Name="ClearBtn" Content="Очистить" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5" Click="ClearBtn_Click"/>
             </StackPanel>
-            <Border Style="{StaticResource GreyPanel}" Width="300" Height="90" >
+            
+            <Border Style="{StaticResource GreyPanel}" Width="300" Height="90" Margin="5 0 5 0" >
                 <StackPanel>
                 <TextBlock Style="{StaticResource GreenBlock}" Text="Введите число сдвига:" HorizontalAlignment="Left"/>
-                <TextBox Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+                <TextBox x:Name="PaternText" Width="200" Height="30" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
                 </StackPanel>
             </Border>
 
-        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Center">
-            <Button Content="Зашифровать" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
-            <Button Content="Дешифровать" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5"/>
-        </StackPanel>
+            <StackPanel  VerticalAlignment="Center">
+                <Button x:Name="CodeBtn" Content="Зашифровать" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5" Click="CodeBtn_Click"/>
+                <Button x:Name="DeCodeBtn" Content="Дешифровать" Width="220" Height="40" Grid.Column="1" Style="{StaticResource PrimaryButton}" Margin="5" Click="DeCodeBtn_Click"/>
+            </StackPanel>
+            
         </WrapPanel>
-        <Border Style="{StaticResource GreyPanel}" Grid.Column="0" Grid.Row="1" Margin="25" 
-                MinHeight="100" Height="auto" 
-                Width="auto" MinWidth="320">
+        
+        <Border Style="{StaticResource GreyPanel}" Grid.Column="0" Grid.Row="2" Margin="25 5 25 25" 
+                MinHeight="100" Height="220" 
+                Width="750">
             <WrapPanel HorizontalAlignment="Center">
                 <StackPanel VerticalAlignment="Center" Margin="5 5 30 5">
                    <TextBlock Style="{StaticResource GreenBlock}" Text="Введите текст для обработки:" HorizontalAlignment="Left"/>
-                   <TextBox Width="310" Height="130" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+                   <TextBox x:Name="InputText" Width="310" Height="130" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
                 </StackPanel>
 
                 <StackPanel VerticalAlignment="Center" Margin="15">
                     <TextBlock Style="{StaticResource GreenBlock}" Text="Результат:" HorizontalAlignment="Left"/>
-                    <TextBox Width="310" Height="130" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
+                    <TextBox x:Name="OutoutText" IsEnabled="False" Width="310" Height="130" Style="{StaticResource ModernTextBox}" HorizontalAlignment="Left" Margin="5"/>
                 </StackPanel>
             </WrapPanel>
         </Border>
